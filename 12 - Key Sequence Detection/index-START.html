@@ -7,6 +7,23 @@
 </head>
 <body>
 <script>
+  const pressedArray = []
+  const secretCode = 'wesbos'
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key)
+    pressedArray.push(e.key)
+    while(pressedArray.length > secretCode.length) {
+      //can refactor to splice
+      pressedArray.shift()
+    }
+
+    if(pressedArray.join("") === secretCode){
+      //alert("Found Secret")
+      cornify_add()
+    }
+
+    console.log(pressedArray)
+  })
 </script>
 </body>
 </html>
